@@ -31,8 +31,7 @@ CREATE TABLE scores (
     points INT NOT NULL CHECK (points BETWEEN 0 AND 100),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (judge_id) REFERENCES users(id) ON DELETE CASCADE,
-    FOREIGN KEY (participant_id) REFERENCES participants(id) ON DELETE CASCADE,
-    UNIQUE (judge_id, participant_id)
+    FOREIGN KEY (participant_id) REFERENCES participants(id) ON DELETE CASCADE
 );
 
 -- Insert users (admin + 4 judges)

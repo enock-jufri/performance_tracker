@@ -14,11 +14,13 @@ $participants = $stmt->fetchAll();
 <!DOCTYPE html>
 <html>
 
+
 <head>
     <title>Scoreboard</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="../assets/js/auto-refresh.js" defer></script>
     <style>
         body {
             min-height: 100vh;
@@ -43,7 +45,6 @@ $participants = $stmt->fetchAll();
             vertical-align: middle;
         }
     </style>
-    <script src="../assets/js/scoreboard.js" defer></script>
 </head>
 
 <body class="bg-dark text-white">
@@ -68,22 +69,7 @@ $participants = $stmt->fetchAll();
                     </tr>
                 </thead>
                 <tbody id="scoreboard-body">
-                    <?php foreach ($participants as $i => $participant): ?>
-                        <?php
-                            $rowClass = '';
-                            if ($i === 0) $rowClass = 'table-success'; // Deep green
-                            elseif ($i === 1) $rowClass = 'table-success'; // Medium green
-                            elseif ($i === 2) $rowClass = 'table-success'; // Light green
-                        ?>
-                        <tr class="<?= $rowClass ?>" style="<?php
-                            if ($i === 0) echo 'background-color: #14532d';
-                            elseif ($i === 1) echo 'background-color: #22c55e;';
-                            elseif ($i === 2) echo 'background-color: #bbf7d0';
-                        ?>">
-                            <td><?= htmlspecialchars($participant['display_name']) ?></td>
-                            <td><?= (int)$participant['total_points'] ?></td>
-                        </tr>
-                    <?php endforeach; ?>
+                    <?php include 'scoreboard_data.php'; ?>
                 </tbody>
             </table>
         </div>

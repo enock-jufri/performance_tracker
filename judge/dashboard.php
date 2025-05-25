@@ -46,7 +46,7 @@ $participants = $pdo->query("SELECT * FROM participants")->fetchAll();
                                             <td><?= htmlspecialchars($participant['display_name']) ?></td>
                                             <td>
                                                 <form action="score_user.php" method="POST" class="d-flex">
-                                                    <input type="hidden" name="user_id" value="<?= $participant['id'] ?>">
+                                                    <input type="hidden" name="participant_id" value="<?= $participant['id'] ?>">
                                                     <input type="number" name="points" class="form-control me-2 bg-dark text-white border-secondary" placeholder="Points" required min="1" max="100">
                                                     <button type="submit" class="btn btn-success">Submit</button>
                                                 </form>
