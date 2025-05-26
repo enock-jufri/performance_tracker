@@ -13,7 +13,7 @@ This project is a web-based scoring system built using the **LAMP stack** (Linux
 
 ### 🔐 Admin Panel
 - Admin can add new judges with a username and display name.
-- [Login (for demo)] (http://13.48.59.117/login.php)
+- [Login (for demo)](http://13.48.59.117/login.php)
   - Username: `admin1`
   - Password: `password123`
 
