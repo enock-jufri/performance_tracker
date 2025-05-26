@@ -1,31 +1,57 @@
-# LAMP Judge Scoring Portal
+# 🏆 LAMP-Based Scoring System
 
-## 💡 Features
+## 📋 Overview
 
-- Admin adds judges
-- Judges view users and submit scores
-- Public scoreboard auto-updates and sorts users
+This project is a web-based scoring system built using the **LAMP stack** (Linux, Apache, MySQL, PHP). It allows:
+- Admins to manage judges
+- Judges to assign scores to participants
+- The public to view a real-time scoreboard
 
-## 🛠 Setup Instructions
+---
 
-1. Clone the repo into your XAMPP or LAMP `htdocs/` directory.
-2. Import the `sql/schema.sql` file into MySQL.
-3. Update `includes/db.php` with your DB credentials.
-4. Open `http://localhost/lamp-judge-portal/public/index.php` to view the scoreboard.
-5. Use `admin/add_judge.php` to add a judge.
-6. Use `judges/view_users.php` to test judge scoring.
+## 📁 Features
 
-## 🗃 Database Schema
+### 🔐 Admin Panel
+- Admin can add new judges with a username and display name.
+- [Login (for demo)] (http://13.48.59.117/login.php)
+  - Username: `admin1`
+  - Password: `password123`
 
-See `sql/schema.sql`.
+### 🧑‍⚖️ Judge Portal
+- Judges can view a list of participants.
+- Judges can select a participant and assign scores.
+- [Login (for demo)](http://13.48.59.117/login.php)
+  - Username: `judge1`
+  - Password: `password123`
 
-## 🔒 Security Notes
+### 📊 Public Scoreboard
+- Displays all participants and their total accumulated points.
+- Automatically refreshes every 30 seconds.
+- Highlights participants based on rank (1st, 2nd, 3rd, etc.).
+- Sorted in descending order of total points.
+- [View Scoreboard](http://13.48.59.117/public/index.php)
 
-- No login system (for demo purposes).
-- In a real app, use sessions + authentication + CSRF protection.
+---
 
-## 🚀 Future Improvements
+## 🧱 Tech Stack
 
-- Judge authentication
-- Input validation + sanitization
-- AJAX-based score submission
+- **Frontend**: HTML, CSS, JavaScript
+- **Backend**: PHP (vanilla)
+- **Database**: MySQL
+- **Server**: Apache (LAMP on EC2 / XAMPP / LAMP VPS)
+
+---
+
+## ⚙️ Setup Instructions
+
+### 📦 Requirements
+- PHP >= 7.4
+- MySQL or MariaDB
+- Apache2 (mod_php enabled)
+- Git (optional)
+
+### 🧪 Local Setup (XAMPP or LAMP)
+
+1. Clone the repository:
+```bash
+git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
