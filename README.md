@@ -54,4 +54,4 @@ This project is a web-based scoring system built using the **LAMP stack** (Linux
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
+git clone https://github.com/enock-jufri/performance_tracker.git
